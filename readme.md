@@ -4,7 +4,7 @@
 
 [Netlify-Link](https://main--competent-hoover-c70a94.netlify.app/)
 
-1. [Create LineOA](https://manager.line.biz/account/@440ecvbl)
+1. [Create LineOA](https://manager.line.biz)
 2. [Create LineLogin](https://developers.line.biz/)
 
 ## TODO
