@@ -9,19 +9,16 @@
     </div>
     <router-view />
 
-    <div>================================================</div>
     <div>
-      <span>example</span>
-      <span> {{ isLoggedIn }}</span>
+      <span>Is LoggedIn {{ isLoggedIn }}</span>
       <div>
         <h1>=================================</h1>
-        <img id="pictureUrl" />
-        <button id="btnLogIn" :disabled="isLoggedIn" v-on:click="logIn">
-          Log In
-        </button>
-        <button id="btnLogOut" :disabled="!isLoggedIn" v-on:click="logOut">
-          Log Out
-        </button>
+        <div>
+          <span>This is image</span>
+          <img :src="profileImg" />
+        </div>
+        <button :disabled="isLoggedIn" v-on:click="logIn">Log In</button>
+        <button :disabled="!isLoggedIn" v-on:click="logOut">Log Out</button>
         <div v-for="message in messages" :key="message">
           {{ message }}
         </div>
@@ -39,9 +36,9 @@ import pjson from "../package.json";
 @Component
 export default class App extends Vue {
   public isLoggedIn = false;
-
   public messages = ["start"];
   public version = pjson.version;
+  public profileImg = "";
 
   async created(): Promise<void> {
     this.messages.push("create");
@@ -80,8 +77,7 @@ export default class App extends Vue {
     this.messages.push("profile.pictureUrl " + profile.pictureUrl);
     this.messages.push("profile.statusMessage " + profile.statusMessage);
     this.messages.push("profile.displayName " + profile.displayName);
-    // document.getElementById("pictureUrl").style.display = "block";
-    // document.getElementById("pictureUrl").src = profile.pictureUrl;
+    this.profileImg = profile.pictureUrl || "";
   }
 }
 </script>
