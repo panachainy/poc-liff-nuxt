@@ -15,7 +15,7 @@
         <h1>=================================</h1>
         <div>
           <span>This is image</span>
-          <img :src="profileImg" />
+          <img :src="profileImg" width="500" height="500" />
         </div>
         <button :disabled="isLoggedIn" v-on:click="logIn">Log In</button>
         <button :disabled="!isLoggedIn" v-on:click="logOut">Log Out</button>
