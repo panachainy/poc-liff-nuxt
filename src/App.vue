@@ -45,10 +45,6 @@ export default class App extends Vue {
 
     await liff.init({ liffId: "1656784689-5qyarvlv" });
 
-    // if (liff.isInClient()) {
-    //   this.getUserProfile();
-    // }
-
     this.messages.push("liff.isInClient(): " + liff.isInClient());
     this.getUserProfile();
 
