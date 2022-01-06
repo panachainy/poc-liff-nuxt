@@ -3,6 +3,9 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
+      <div>
+        <span>Version: </span> <span>{{ version }}</span>
+      </div>
     </div>
     <router-view />
 
@@ -31,12 +34,14 @@
 import liff from "@line/liff";
 import { Vue } from "vue-property-decorator";
 import Component from "vue-class-component";
+import pjson from "../package.json";
 
 @Component
 export default class App extends Vue {
   public isLoggedIn = false;
 
   public messages = ["start"];
+  public version = pjson.version;
 
   async created(): Promise<void> {
     this.messages.push("create");
