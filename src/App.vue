@@ -23,6 +23,11 @@
           {{ message }}
         </div>
       </div>
+
+      <div class="wrapper">
+        ID Token <button v-on:click="toggleIdTokenBox">Open/Close</button>
+        <div v-if="isOpenIdTokenBox">{{ idToken }}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -39,10 +44,13 @@ export default class App extends Vue {
   public messages = ["start"];
   public version = pjson.version;
   public profileImg = "";
+  public isOpenIdTokenBox = false;
+  public idToken = "";
 
   async created(): Promise<void> {
     this.messages.push("create");
 
+    // Error -> `Error: LiffId is not found.` will found when you not login
     await liff.init({ liffId: "1656784689-5qyarvlv" });
 
     this.messages.push("liff.isInClient(): " + liff.isInClient());
@@ -50,6 +58,8 @@ export default class App extends Vue {
 
     this.updateLoginStatus();
     this.messages.push("created");
+
+    this.getIdToken();
   }
 
   logOut(): void {
@@ -76,6 +86,14 @@ export default class App extends Vue {
     this.messages.push("profile.statusMessage " + profile.statusMessage);
     this.messages.push("profile.displayName " + profile.displayName);
     this.profileImg = profile.pictureUrl || "";
+  }
+
+  getIdToken(): void {
+    this.idToken = liff.getIDToken();
+  }
+
+  toggleIdTokenBox(): void {
+    this.isOpenIdTokenBox = !this.isOpenIdTokenBox;
   }
 }
 </script>
