@@ -89,7 +89,7 @@ export default class App extends Vue {
   }
 
   getIdToken(): void {
-    this.idToken = liff.getIDToken();
+    this.idToken = liff.getIDToken() ?? "";
   }
 
   toggleIdTokenBox(): void {
