@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e47cbbd0-5003-4708-aeba-b61582711380/deploy-status)](https://app.netlify.com/sites/competent-hoover-c70a94/deploys)
 
-[Netlify-Link](https://main--competent-hoover-c70a94.netlify.app/)
+[Netlify-Link](https://competent-hoover-c70a94.netlify.app)
 
 1. [Create LineOA](https://manager.line.biz)
 2. [Create LineLogin](https://developers.line.biz/)
