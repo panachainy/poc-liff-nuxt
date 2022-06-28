@@ -51,7 +51,7 @@ export default class App extends Vue {
     this.messages.push("create");
 
     // Error -> `Error: LiffId is not found.` will found when you not login
-    await liff.init({ liffId: "1656784689-5qyarvlv" });
+    await liff.init({ liffId: "1656790536-lEOey5Ox" });
 
     this.messages.push("liff.isInClient(): " + liff.isInClient());
     this.getUserProfile();
